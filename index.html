@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Eli Allen: Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,500;0,700;0,800;1,500&family=Noto+Sans:wght@400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:light;
+    --bg:#F8FAFC; --bg-2:#EEF3F9; --bg-3:#E2E8F0;
+    --ink:#0F172A; --ink-2:#334155; --muted:#64748B;
+    --line:#E2E8F0; --line-strong:#CBD5E1;
+    --accent:#2563EB; --accent-ink:#1D4ED8; --accent-soft:#E3EDFD;
+    --amber:#0369A1; --amber-soft:#E0F2FE;
+    --card:#ffffff;
+    --shadow:0 12px 32px rgba(15,23,42,.08);
+    --radius:18px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --bg:#0F172A; --bg-2:#16223A; --bg-3:#1E293B;
+      --ink:#F1F5F9; --ink-2:#CBD5E1; --muted:#94A3B8;
+      --line:#263449; --line-strong:#3B4E6B;
+      --accent:#3B82F6; --accent-ink:#93C5FD; --accent-soft:#1E3A5F;
+      --amber:#7DD3FC; --amber-soft:#0E2F42;
+      --card:#16233B;
+      --shadow:0 12px 32px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --bg:#0F172A; --bg-2:#16223A; --bg-3:#1E293B;
+    --ink:#F1F5F9; --ink-2:#CBD5E1; --muted:#94A3B8;
+    --line:#263449; --line-strong:#3B4E6B;
+    --accent:#3B82F6; --accent-ink:#93C5FD; --accent-soft:#1E3A5F;
+    --amber:#7DD3FC; --amber-soft:#0E2F42;
+    --card:#16233B;
+    --shadow:0 12px 32px rgba(0,0,0,.4);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans",system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent-ink);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{text-decoration-thickness:2px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 48px}
+  /* THEME TOGGLE */
+  .topbar{display:flex;justify-content:flex-end;padding:16px 0 0}
+  .theme-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;border:1px solid var(--line-strong);background:var(--card);color:var(--ink);font-weight:700;font-size:13px;cursor:pointer;font-family:inherit}
+  .theme-toggle:hover{border-color:var(--accent)}
+  .theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .theme-toggle svg{width:15px;height:15px;flex-shrink:0;display:block}
+  /* HERO */
+  .hero{padding:26px 0 10px}
+  .hero-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:36px;align-items:start}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr}}
+  .eyebrow{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:500;margin:0 0 14px}
+  h1{font-family:"Noto Serif",serif;font-size:clamp(44px,7vw,72px);line-height:.95;letter-spacing:-.02em;margin:0;font-weight:800}
+  h1 em{font-style:italic;font-weight:500;color:var(--accent-ink)}
+  .lede{font-size:19px;line-height:1.55;color:var(--ink-2);margin:18px 0 0;max-width:620px}
+  .lede strong{color:var(--ink)}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:999px;border:1px solid var(--line-strong);background:var(--card);color:var(--ink);font-weight:700;font-size:14px;text-decoration:none;cursor:pointer}
+  .btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .btn.primary:hover{opacity:.92}
+  .btn:hover{border-color:var(--accent)}
+  .portrait-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow)}
+  .portrait{display:flex;gap:16px;align-items:center}
+  .portrait img{width:112px;height:112px;object-fit:cover;border-radius:50%;border:3px solid var(--bg-3);flex-shrink:0;background:var(--bg-3)}
+  .portrait-name{font-family:"Noto Serif",serif;font-size:22px;font-weight:700;line-height:1.1;margin:0}
+  .portrait-role{font-size:13.5px;color:var(--muted);line-height:1.4;margin:4px 0 0}
+  .fact-list{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px solid var(--line);display:grid;gap:9px}
+  .fact-list li{display:flex;gap:10px;font-size:14px;color:var(--ink-2);line-height:1.45}
+  .fact-list li b{color:var(--ink)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);margin-top:8px;flex-shrink:0}
+  .links-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .links-row a{font-size:13px;font-weight:700;padding:7px 11px;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);text-decoration:none;color:var(--ink)}
+  /* STATS */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0 8px}
+  @media(max-width:560px){.stats{grid-template-columns:1fr}}
+  .stat{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .stat-num{font-family:"Noto Serif",serif;font-size:32px;font-weight:800;line-height:1}
+  .stat-label{font-size:13px;color:var(--muted);line-height:1.4;margin-top:6px}
+  /* SECTIONS */
+  section{padding:38px 0}
+  .section-head{max-width:680px;margin-bottom:20px}
+  .section-head h2{font-family:"Noto Serif",serif;font-size:clamp(28px,4vw,38px);line-height:1.05;margin:0 0 8px;letter-spacing:-.01em}
+  .section-head p{color:var(--ink-2);margin:0;font-size:16.5px}
+  .kicker{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:500;margin:0 0 10px}
+  /* TIMELINE */
+  .timeline-shell{background:#0F172A;color:#fff;border-radius:22px;padding:8px;overflow:hidden}
+  @media(prefers-color-scheme: dark){:root:not([data-theme="light"]) .timeline-shell{background:#020617;border:1px solid var(--line)}}
+  :root[data-theme="dark"] .timeline-shell{background:#020617;border:1px solid var(--line)}
+  .tl-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px}
+  @media(max-width:640px){.tl-tabs{grid-template-columns:1fr}}
+  .tl-tab{appearance:none;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;border-radius:14px;padding:14px;text-align:left;cursor:pointer;font-family:inherit}
+  .tl-tab small{display:block;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:4px}
+  .tl-tab span{font-weight:800;font-size:15px;line-height:1.25;display:block}
+  .tl-tab[aria-selected="true"]{background:#fff;color:#0F172A;border-color:#fff}
+  .tl-panel{padding:22px 20px 24px}
+  .tl-panel h3{font-family:"Noto Serif",serif;font-size:26px;margin:0 0 8px;line-height:1.15}
+  .tl-panel p{margin:0;color:rgba(255,255,255,.86);max-width:700px;font-size:16px}
+  .tl-panel p + p{margin-top:14px}
+  .tl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .tl-tags span{font-size:12.5px;font-weight:700;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.25);color:#fff}
+  /* LENSES */
+  .lens-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .lens-tab{appearance:none;border:1px solid var(--line-strong);background:var(--card);color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:800;font-size:14px;cursor:pointer;font-family:inherit}
+  .lens-tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  .lens-panel{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--card);box-shadow:var(--shadow)}
+  .lens-panel h3{margin:0 0 6px;font-size:20px}
+  .lens-panel p{margin:0;color:var(--ink-2)}
+  .lens-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  @media(max-width:640px){.lens-grid{grid-template-columns:1fr}}
+  .lens-point{background:var(--bg-2);border-radius:12px;padding:14px;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+  .lens-point b{display:block;color:var(--ink);margin-bottom:4px}
+  /* PROJECTS */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .filter-btn{appearance:none;border:1px solid var(--line-strong);background:transparent;color:var(--ink-2);padding:8px 13px;border-radius:999px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+  .filter-btn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .projects{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:720px){.projects{grid-template-columns:1fr}}
+  .project{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:var(--card);display:flex;flex-direction:column;gap:8px}
+  .project[hidden]{display:none}
+  .project-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+  .project h3{margin:0;font-size:17px;line-height:1.3}
+  .project h3 a{color:var(--ink);text-decoration:none}
+  .project h3 a:hover{text-decoration:underline}
+  .tag{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);white-space:nowrap;font-weight:500}
+  .tag.amber{background:var(--amber-soft);color:var(--amber)}
+  .project p{margin:0;color:var(--ink-2);font-size:14.5px;line-height:1.55;flex:1}
+  .project-meta{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+  /* BELIEFS */
+  .beliefs{display:grid;gap:10px}
+  .belief{border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}
+  .belief button{width:100%;appearance:none;background:none;border:none;padding:18px;text-align:left;display:flex;justify-content:space-between;gap:16px;align-items:center;cursor:pointer;font-family:inherit;color:var(--ink)}
+  .belief button strong{font-size:16.5px;line-height:1.35}
+  .belief button span{color:var(--muted);font-size:13px;display:block;margin-top:2px;font-weight:400}
+  .chev{font-size:20px;color:var(--accent-ink);flex-shrink:0;transition:transform .2s}
+  .belief.open .chev{transform:rotate(45deg)}
+  .belief-body{display:none;padding:0 18px 18px;color:var(--ink-2);font-size:15px;line-height:1.6;max-width:760px}
+  .belief.open .belief-body{display:block}
+  /* QUOTE / CLOSE */
+  .close-box{background:var(--bg-2);border:1px solid var(--line);border-radius:22px;padding:26px}
+  .close-box blockquote{font-family:"Noto Serif",serif;font-size:clamp(22px,3.4vw,30px);line-height:1.3;font-style:italic;margin:0 0 12px}
+  .close-box p{color:var(--ink-2);margin:0;max-width:700px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  @media(prefers-reduced-motion: reduce){html{scroll-behavior:auto} .chev{transition:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <div class="topbar">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <span class="tt-label">Dark mode</span>
+    </button>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">AI builder · Educator · Former Meta</p>
+        <h1>I was evaluating AI at Meta <em>before</em> ChatGPT made it headline news.</h1>
+        <p class="lede">I'm <strong>Eli Allen</strong>. For five years at Meta my work centered on how humans interact with AI and how they felt the AI did a task, before and after the large language model hype. I care a lot more about people than I do about machines, so I built simulators that let people evaluate AI without being sent proprietary technology, and evaluation frameworks that gathered feedback from actual users quickly and reliably. Since then I've used AI every day to write software, automate the boring stuff, and build learning platforms that give students real practice for real jobs.</p>
+        <p class="lede" style="margin-top:12px">That's why people listen when I talk about working with AI: I didn't arrive with the hype. I was already there, listening to how real people experienced it and where it fell short for them.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#now">What I'm working on now</a>
+          <a class="btn" href="#story">My story in three eras ↓</a>
+          <a class="btn" href="https://availabooks.com" target="_blank" rel="noopener">AvailaBooks.com ↗</a>
+        </div>
+      </div>
+      <aside class="portrait-card" aria-label="Profile card">
+        <div class="portrait">
+          <img src="data:image/jpeg;base64,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" alt="Headshot of Eli Allen in a suit and tie against a brick wall" width="150" height="150" />
+          <div>
+            <p class="portrait-name">Eli Allen</p>
+            <p class="portrait-role">Elijah Andrew Allen<br>Building with AI for education &amp; productivity</p>
+          </div>
+        </div>
+        <ul class="fact-list">
+          <li><span class="dot"></span><span><b>5 years at Meta</b>: focused on how humans interact with AI and how they felt it did its job, because people matter more to me than machines</span></li>
+          <li><span class="dot"></span><span>Started at Meta before finishing his degree. The work came first; the diploma caught up.</span></li>
+          <li><span class="dot"></span><span><b>Early agent adopter</b>: one of the first in my org on MyClaw, Meta's internal agent and the prototype for Muse</span></li>
+          <li><span class="dot"></span><span><b>Master's, Information Systems Management</b>: Brigham Young University, 2023. I chose it because I loved where software meets a business need, and with current AI tools it is even more effective to build software that meets the needs of large and small businesses.</span></li>
+          <li><span class="dot"></span><span><b>On GitHub since 2019</b> as <b>@eaallen</b></span></li>
+          <li><span class="dot"></span><span><b>Family man</b>: wife and two children, living in Carbon County, Utah</span></li>
+        </ul>
+        <div class="links-row">
+          <a href="https://github.com/eaallen" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/elijah-andrew-allen" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://availabooks.com" target="_blank" rel="noopener">AvailaBooks ↗</a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="stats" aria-label="At a glance">
+      <div class="stat"><div class="stat-num">5 yrs</div><div class="stat-label">At Meta, focused on the human experience of AI</div></div>
+      <div class="stat"><div class="stat-num">Pre + Post</div><div class="stat-label">ChatGPT: worked on AI on both sides of the LLM moment</div></div>
+      <div class="stat"><div class="stat-num">2023</div><div class="stat-label">Master's in Information Systems Management, BYU</div></div>
+    </div>
+  </div>
+
+  <!-- STORY / TIMELINE -->
+  <section id="story">
+    <div class="section-head">
+      <p class="kicker">The story</p>
+      <h2>Three eras. AI all the way.</h2>
+      <p>Tap an era. Each one shaped how I judge AI today, not by demos, but by whether it holds up when real people depend on it.</p>
+    </div>
+    <div class="timeline-shell">
+      <div class="tl-tabs" role="tablist" aria-label="Career eras">
+        <button class="tl-tab" role="tab" aria-selected="true" data-era="before"><small>Era 01 · At Meta</small><span>Before the hype</span></button>
+        <button class="tl-tab" role="tab" aria-selected="false" data-era="shift"><small>Era 02 · The shift</small><span>ChatGPT changes everything</span></button>
+        <button class="tl-tab" role="tab" aria-selected="false" data-era="now"><small>Era 03 · Since Meta</small><span>Builder &amp; teacher</span></button>
+      </div>
+      <div class="tl-panel" id="tlPanel" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- WHY LISTEN / LENSES -->
+  <section id="why">
+    <div class="section-head">
+      <p class="kicker">Why listen to me on AI?</p>
+      <h2>Three kinds of credibility, not just opinions</h2>
+      <p>Most AI advice comes from one angle. Mine comes from studying how people experience it, shipping with it, and teaching people to use it.</p>
+    </div>
+    <div class="lens-tabs" role="tablist" aria-label="Credibility lenses">
+      <button class="lens-tab" role="tab" aria-selected="true" data-lens="evaluator">The Human Lens</button>
+      <button class="lens-tab" role="tab" aria-selected="false" data-lens="builder">The Builder</button>
+      <button class="lens-tab" role="tab" aria-selected="false" data-lens="teacher">The Teacher</button>
+    </div>
+    <div class="lens-panel" id="lensPanel" role="tabpanel" aria-live="polite"></div>
+  </section>
+
+  <!-- NOW -->
+  <section id="now">
+    <div class="section-head">
+      <p class="kicker">What I'm working on now</p>
+      <h2>Simulations, grading, and teaching people to actually use agents</h2>
+      <p>Filter by what you care about. Everything here is current, real work, not a roadmap.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button class="filter-btn" aria-pressed="true" data-filter="all">All work</button>
+      <button class="filter-btn" aria-pressed="false" data-filter="simulation">Simulations</button>
+      <button class="filter-btn" aria-pressed="false" data-filter="grading">Grading for educators</button>
+      <button class="filter-btn" aria-pressed="false" data-filter="teaching">Teaching</button>
+    </div>
+    <div class="projects" id="projects">
+      <article class="project" data-cat="simulation teaching">
+        <div class="project-top"><h3><a href="https://github.com/eaallen/muse-simulator" target="_blank" rel="noopener">Muse Simulator ↗</a></h3><span class="tag">Simulation</span></div>
+        <p>An interactive simulator of the Muse AI app, built with AI assistance for my course. Students tap through realistic setups, including a “Your First Run” onboarding simulation added Nov 3, 2026, and practice working with an agent before they have to do it for real.</p>
+        <div class="project-meta">github.com/eaallen/muse-simulator · Most recent project</div>
+      </article>
+
+      <article class="project" data-cat="simulation teaching">
+        <div class="project-top"><h3><a href="https://availabooks.com" target="_blank" rel="noopener">AvailaBooks ↗</a></h3><span class="tag">Platform</span></div>
+        <p>Home of my free online textbook <em>Personal Productivity with JavaScript</em>, and the platform I'm building beyond it: interactive simulations and knowledge checks instead of passive videos, so students learn by doing.</p>
+        <div class="project-meta">availabooks.com · Free textbook + learning platform</div>
+      </article>
+
+      <article class="project" data-cat="grading simulation">
+        <div class="project-top"><h3>Automated grading for educators</h3><span class="tag amber">Grading</span></div>
+        <p>The bulk of my recent work: helping instructors auto-grade Word and Excel student work, including transcript grading and Excel simulators. I maintain <b>@availabooks/simmy</b> on npm, an embeddable Excel simulator with a graded task pane.</p>
+        <div class="project-meta">npm: @availabooks/simmy · Word &amp; Excel auto-grading · <a href="https://simmy.availabooks.com" target="_blank" rel="noopener">Try the Excel simulator ↗</a></div>
+      </article>
+
+      <article class="project" data-cat="grading teaching">
+        <div class="project-top"><h3>Prometheus Excel / SQL Educator</h3><span class="tag amber">Grading</span></div>
+        <p>I promote the Prometheus Excel/SQL Educator, a MyEducator resource co-authored by Gove Allen and Nick Ball, to college instructors who need students to get genuine spreadsheet and SQL practice, with grading that scales.</p>
+        <div class="project-meta">MyEducator resource · For college instructors</div>
+      </article>
+
+      <article class="project" data-cat="teaching">
+        <div class="project-top"><h3>“Get the Help You've Always Wanted”</h3><span class="tag">Live course · Dec 2026</span></div>
+        <p>My live course on working with AI agents, hands-on with Muse, taught through AvailaBooks in December 2026. Three live classes, office hours, and a simple promise: you leave with an agent set up and doing real work for you, with you approving what matters.</p>
+        <div class="project-meta">Through AvailaBooks · December 2026</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BELIEFS -->
+  <section id="beliefs">
+    <div class="section-head">
+      <p class="kicker">What I believe</p>
+      <h2>Why I'm excited, and what I'm building toward</h2>
+      <p>Open each one. This is the point of view behind the work above.</p>
+    </div>
+    <div class="beliefs">
+      <div class="belief open">
+        <button aria-expanded="true"><div><strong>Simulated experience is the missing step in education</strong><span>Practice the job before you have the job</span></div><span class="chev">+</span></button>
+        <div class="belief-body">Reading and watching only go so far. I'm most excited about AI giving students simulated experiences (a spreadsheet to fix, an app to navigate, an agent to direct) that prepare them for real jobs, safely and repeatedly, before the stakes are real. The Muse Simulator and the Excel simulator are both bets on exactly that. I am just as excited about using AI to help students role play and deal with human situations. It is kind of hard to get two humans to role play really well, but AI is actually really great at role playing. That can improve training for police officers, prepare students for interviews, and give students practice talking through and articulating the thoughts that are in their head, out loud, until the words come out the way they mean them.</div>
+      </div>
+      <div class="belief">
+        <button aria-expanded="false"><div><strong>AI should automate the boring stuff</strong><span>So people can do the work only people can do</span></div><span class="chev">+</span></button>
+        <div class="belief-body">Since Meta, I've used AI extensively to write software and automate repetitive, boring work. The gain isn't just speed. It's attention. When grading, drafting, watching an inbox, and routine follow-up are handled, teachers and small operators get their time back for judgment, relationships, and craft.</div>
+      </div>
+      <div class="belief">
+        <button aria-expanded="false"><div><strong>People matter more than a good demo</strong><span>Five years of asking how it felt to use</span></div><span class="chev">+</span></button>
+        <div class="belief-body">Working on the human side of AI at Meta taught me to distrust a good demo. What matters is how real people feel the AI handled the task. Good AI work means listening to actual users, knowing where the experience fails them, and keeping a human in charge of what sends, spends, or counts. That's the habit I teach: draft, review, approve, then automate with confidence.</div>
+      </div>
+      <div class="belief">
+        <button aria-expanded="false"><div><strong>The goal is a better world, starting with learners</strong><span>Free, practical, and hands-on where I can make it so</span></div><span class="chev">+</span></button>
+        <div class="belief-body">I teach the tools I teach because I believe they genuinely help real people, and I really enjoy making people's lives better. I have believed that since my MyClaw days at Meta, when I watched an early agent take real work off my plate. I'm trying to make the world a better place with this. That's why the textbook is free, why the course is hands-on instead of theoretical, and why I keep building tools for educators. If AI is going to change work, the people who learn it by doing, not just hearing about it, will be ready.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSE -->
+  <section>
+    <div class="close-box">
+      <blockquote>“I didn't get into AI when it got popular. I was focused on how people experienced it, and now I'm building the tools that teach it.”</blockquote>
+      <p>If you're an educator, a small operator, or just someone who wants an agent doing real work for you, start with the free textbook at <a href="https://availabooks.com" target="_blank" rel="noopener">AvailaBooks.com</a>, try the <a href="https://simmy.availabooks.com" target="_blank" rel="noopener">Excel simulator</a>, or follow the work on <a href="https://github.com/eaallen" target="_blank" rel="noopener">GitHub</a> and <a href="https://www.linkedin.com/in/elijah-andrew-allen" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var eras = {
+    before: {
+      title: "Before the hype: AI without the spotlight",
+      body: [
+        "No launch day frenzy, no hype cycle. I actually started at Meta before I had even finished my degree. These were the early, pre ChatGPT years, when AI work happened quietly: build the thing, watch real people try it, and note honestly where it held up and where it did not. That quiet, unglamorous stretch is my baseline for judging everything that came after.",
+        "It is also when I became an early agent adopter. Meta had built an internal agent called MyClaw, the prototype for what became Muse, and I was one of the first people in my org to put it to work. I used it for everything: gathering feedback from internal users, documenting all of my software before I left Meta so the handoff would be easy, writing code, and shipping fixes to live bugs."
+      ],
+      tags: ["Human AI interaction", "Evaluation frameworks", "Simulators for evaluation", "Early MyClaw adopter", "Meta · 5 years"]
+    },
+    shift: {
+      title: "The shift: ChatGPT and the LLM moment",
+      body: "Then ChatGPT landed and everyone suddenly had an opinion about AI. I lived that transition from inside a team that had already been listening to how real users experienced these systems. I saw what genuinely changed (capability, accessibility, expectations) and what was just noise. That perspective is hard to fake: I know the before picture.",
+      tags: ["Pre + post ChatGPT", "LLM hype, grounded", "What actually changed"]
+    },
+    now: {
+      title: "Since Meta: building and teaching with AI daily",
+      body: "Since then I've used AI extensively to write software, automate boring work, and create educational content and platforms like AvailaBooks.com. I'm on GitHub as @eaallen (active since 2019), I speak and teach about AI for educators, and my newest builds are simulators that let students practice real work before they face it for real.",
+      tags: ["AvailaBooks", "Simulators", "Automation", "Teaching"]
+    }
+  };
+  var tlPanel = document.getElementById('tlPanel');
+  function renderEra(key){
+    var e = eras[key];
+    tlPanel.innerHTML = '<h3></h3><div class="tl-tags"></div>';
+    tlPanel.querySelector('h3').textContent = e.title;
+    var paras = Array.isArray(e.body) ? e.body : [e.body];
+    var tags = tlPanel.querySelector('.tl-tags');
+    paras.forEach(function(text){
+      var p = document.createElement('p');
+      p.textContent = text;
+      tlPanel.insertBefore(p, tags);
+    });
+    e.tags.forEach(function(t){ var s=document.createElement('span'); s.textContent=t; tags.appendChild(s); });
+  }
+  renderEra('before');
+  document.querySelectorAll('.tl-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.tl-tab').forEach(function(b){ b.setAttribute('aria-selected','false'); });
+      btn.setAttribute('aria-selected','true');
+      renderEra(btn.getAttribute('data-era'));
+    });
+  });
+
+  var lenses = {
+    evaluator: {
+      title: "The Human Lens: I listened to how people experienced AI",
+      body: "Five years at Meta focused on human interaction with AI means I don't judge a model by a slick demo. I care more about people than machines, so I judge it by how real users feel it handled their task, whether they trust it, and where that experience breaks down for them.",
+      points: [
+        ["Simulators, not secrets", "I built simulators so people could evaluate AI hands on without being sent proprietary technology, which made honest, realistic feedback possible."],
+        ["Feedback from actual users", "I built evaluation frameworks that gathered feedback from real users quickly and reliably, and I did that work on both sides of the ChatGPT moment, so I have a baseline most commentators simply don't have."]
+      ]
+    },
+    builder: {
+      title: "The Builder: I ship with AI, every week",
+      body: "Since Meta, AI is my daily co-worker: writing software, automating the boring stuff, and shipping real products. My work on GitHub as @eaallen since 2019 is what that habit looks like from the outside.",
+      points: [
+        ["Current, concrete work", "Muse Simulator, @availabooks/simmy, and AvailaBooks were all built with AI assistance, and they all had to work for real users."],
+        ["Automation that earns trust", "Draft, review, approve. I automate aggressively, but I keep humans in charge of what sends, spends, or grades."]
+      ]
+    },
+    teacher: {
+      title: "The Teacher: I make it learnable by doing",
+      body: "A Master's in Information Systems Management (BYU, 2023), a free textbook, and a live December 2026 course. I chose the master's because I loved the combination of where software meets a business need, and with current AI tools it is even more effective to build software that meets the needs of large and small businesses. There is a reason I teach Muse specifically: I was an early user of MyClaw, the Meta prototype it grew out of, so I have been working this way since before it had a name. My work is turning AI skill into something a beginner can practice, not just hear about.",
+      points: [
+        ["Simulations over lectures", "Students learn agents and Excel faster in a simulator that feels like the real thing than from another video. It is the same idea behind my Meta work: let people try the thing safely, then learn from how it actually felt to use."],
+        ["Practice with agents", "Students do not just hear about agents. They direct one, review its work, and learn to approve what matters before anything counts."]
+      ]
+    }
+  };
+  var lensPanel = document.getElementById('lensPanel');
+  function renderLens(key){
+    var l = lenses[key];
+    lensPanel.innerHTML = '<h3></h3><p></p><div class="lens-grid"></div>';
+    lensPanel.querySelector('h3').textContent = l.title;
+    lensPanel.querySelector('p').textContent = l.body;
+    var grid = lensPanel.querySelector('.lens-grid');
+    l.points.forEach(function(pt){
+      var d=document.createElement('div'); d.className='lens-point';
+      var b=document.createElement('b'); b.textContent=pt[0];
+      d.appendChild(b); d.appendChild(document.createTextNode(pt[1]));
+      grid.appendChild(d);
+    });
+  }
+  renderLens('evaluator');
+  document.querySelectorAll('.lens-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.lens-tab').forEach(function(b){ b.setAttribute('aria-selected','false'); });
+      btn.setAttribute('aria-selected','true');
+      renderLens(btn.getAttribute('data-lens'));
+    });
+  });
+
+  // Project filters
+  document.querySelectorAll('.filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.filter-btn').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      var f = btn.getAttribute('data-filter');
+      document.querySelectorAll('#projects .project').forEach(function(card){
+        if(f==='all'){ card.hidden=false; return; }
+        var cats = (card.getAttribute('data-cat')||'').split(' ');
+        card.hidden = cats.indexOf(f)===-1;
+      });
+    });
+  });
+
+  // Beliefs accordion
+  document.querySelectorAll('.belief').forEach(function(item){
+    var btn = item.querySelector('button');
+    btn.addEventListener('click', function(){
+      var open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  // Theme toggle: follows the system preference until the visitor picks a side
+  var themeToggle = document.getElementById('themeToggle');
+  var themeMq = window.matchMedia('(prefers-color-scheme: dark)');
+  function effectiveDark(){
+    var t = document.documentElement.getAttribute('data-theme');
+    if(t){ return t === 'dark'; }
+    return themeMq.matches;
+  }
+  function paintToggle(){
+    var dark = effectiveDark();
+    themeToggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    themeToggle.querySelector('.tt-label').textContent = dark ? 'Light mode' : 'Dark mode';
+    themeToggle.querySelector('.icon-sun').style.display = dark ? 'block' : 'none';
+    themeToggle.querySelector('.icon-moon').style.display = dark ? 'none' : 'block';
+  }
+  themeToggle.addEventListener('click', function(){
+    document.documentElement.setAttribute('data-theme', effectiveDark() ? 'light' : 'dark');
+    paintToggle();
+  });
+  if(themeMq.addEventListener){ themeMq.addEventListener('change', paintToggle); }
+  paintToggle();
+})();
+</script>
+</body>
+</html>
