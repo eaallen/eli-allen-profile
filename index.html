@@ -51,10 +51,10 @@
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px 48px}
   /* THEME TOGGLE */
   .topbar{display:flex;justify-content:flex-end;padding:16px 0 0}
-  .theme-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;border:1px solid var(--line-strong);background:var(--card);color:var(--ink);font-weight:700;font-size:13px;cursor:pointer;font-family:inherit}
+  .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid var(--line-strong);background:var(--card);color:var(--ink);cursor:pointer;font-family:inherit}
   .theme-toggle:hover{border-color:var(--accent)}
   .theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .theme-toggle svg{width:15px;height:15px;flex-shrink:0;display:block}
+  .theme-toggle svg{width:19px;height:19px;flex-shrink:0;display:block}
   /* HERO */
   .hero{padding:26px 0 10px}
   .hero-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:36px;align-items:start}
@@ -157,10 +157,9 @@
 <main class="wrap">
 
   <div class="topbar">
-    <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
       <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-      <span class="tt-label">Dark mode</span>
     </button>
   </div>
 
@@ -452,7 +451,8 @@
   function paintToggle(){
     var dark = effectiveDark();
     themeToggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
-    themeToggle.querySelector('.tt-label').textContent = dark ? 'Light mode' : 'Dark mode';
+    themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    themeToggle.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
     themeToggle.querySelector('.icon-sun').style.display = dark ? 'block' : 'none';
     themeToggle.querySelector('.icon-moon').style.display = dark ? 'none' : 'block';
   }
