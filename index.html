@@ -57,8 +57,17 @@
   .theme-toggle svg{width:19px;height:19px;flex-shrink:0;display:block}
   /* HERO */
   .hero{padding:26px 0 10px}
-  .hero-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:36px;align-items:start}
-  @media(max-width:820px){.hero-grid{grid-template-columns:1fr}}
+  .hero-grid{display:grid;grid-template-columns:1.45fr .85fr;column-gap:36px;row-gap:0;align-items:start}
+  .hero-intro{grid-column:1;grid-row:1}
+  .hero-body{grid-column:1;grid-row:2}
+  .hero-grid>.portrait-card{grid-column:2;grid-row:1/span 2}
+  @media(max-width:820px){
+    .hero-grid{grid-template-columns:1fr;row-gap:20px}
+    .hero-intro{grid-column:1;grid-row:1}
+    .hero-grid>.portrait-card{grid-column:1;grid-row:2}
+    .hero-body{grid-column:1;grid-row:3}
+    .hero-body>.lede:first-child{margin-top:0}
+  }
   .eyebrow{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:500;margin:0 0 14px}
   h1{font-family:"Noto Serif",serif;font-size:clamp(44px,7vw,72px);line-height:.95;letter-spacing:-.02em;margin:0;font-weight:800}
   h1 em{font-style:italic;font-weight:500;color:var(--accent-ink)}
@@ -166,16 +175,9 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-grid">
-      <div>
+      <div class="hero-intro">
         <p class="eyebrow">AI builder · Educator · Former Meta</p>
         <h1>I was evaluating AI at Meta <em>before</em> ChatGPT made it headline news.</h1>
-        <p class="lede">I'm <strong>Eli Allen</strong>. For five years at Meta my work centered on how humans interact with AI and how they felt the AI did a task, before and after the large language model hype. I care a lot more about people than I do about machines, so I built simulators that let people evaluate AI without being sent proprietary technology, and evaluation frameworks that gathered feedback from actual users quickly and reliably. Since then I've used AI every day to write software, automate the boring stuff, and build learning platforms that give students real practice for real jobs.</p>
-        <p class="lede" style="margin-top:12px">That's why people listen when I talk about working with AI: I didn't arrive with the hype. I was already there, listening to how real people experienced it and where it fell short for them.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#now">What I'm working on now</a>
-          <a class="btn" href="#story">My story in three eras ↓</a>
-          <a class="btn" href="https://availabooks.com" target="_blank" rel="noopener">AvailaBooks.com ↗</a>
-        </div>
       </div>
       <aside class="portrait-card" aria-label="Profile card">
         <div class="portrait">
@@ -199,6 +201,15 @@
           <a href="https://availabooks.com" target="_blank" rel="noopener">AvailaBooks ↗</a>
         </div>
       </aside>
+      <div class="hero-body">
+        <p class="lede">I'm <strong>Eli Allen</strong>. For five years at Meta my work centered on how humans interact with AI and how they felt the AI did a task, before and after the large language model hype. I care a lot more about people than I do about machines, so I built simulators that let people evaluate AI without being sent proprietary technology, and evaluation frameworks that gathered feedback from actual users quickly and reliably. Since then I've used AI every day to write software, automate the boring stuff, and build learning platforms that give students real practice for real jobs.</p>
+        <p class="lede" style="margin-top:12px">That's why people listen when I talk about working with AI: I didn't arrive with the hype. I was already there, listening to how real people experienced it and where it fell short for them.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#now">What I'm working on now</a>
+          <a class="btn" href="#story">My story in three eras ↓</a>
+          <a class="btn" href="https://availabooks.com" target="_blank" rel="noopener">AvailaBooks.com ↗</a>
+        </div>
+      </div>
     </div>
 
     <div class="stats" aria-label="At a glance">
